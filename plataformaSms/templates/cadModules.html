@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block body %}
+        <div class="container">
+            <!-- <h1>Cadastro de Módulos</h1> -->
+           <div class="row">
+                <div class="col col-5">
+                   <form method="POST" action="" class="border p-4 mt-2">
+                       {{ form_cadastroModulos.csrf_token }}
+                        <legend>Cadastrar Módulos</legend>
+                        <fieldset>
+                            <div class="form-group">
+                                {{ form_cadastroModulos.descrModule.label(class="form-control-label") }}
+                               {% if form_cadastroModulos.descrModule.errors %}
+                                    {{ form_cadastroModulos.descrModule(class="form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for erro in form_cadastroModulos.descrModule.errors %}
+                                            {{ erro }}
+                                        {% endfor %}
+                                    </div>
+                               {% else %}
+                                    {{ form_cadastroModulos.descrModule(class="form-control") }}
+                               {% endif %}                                
+                            </div>
+                            <!------------------------ 2 Campo -------------------------->
+                            <div class="form-group">
+                                {{ form_cadastroModulos.fixed_ip.label(class="form-control-label") }}
+                               {% if form_cadastroModulos.fixed_ip.errors %}
+                                    {{ form_cadastroModulos.fixed_ip(class="form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for erro in form_cadastroModulos.fixed_ip.errors %}
+                                            {{ erro }}
+                                        {% endfor %}
+                                    </div>
+                               {% else %}
+                                    {{ form_cadastroModulos.fixed_ip(class="form-control") }}
+                               {% endif %}                                  
+                            </div>
+                            <!------------------------ 3 Campo -------------------------->
+                            <div class="form-group">
+                                   {{ form_cadastroModulos.udp_Port.label(class="form-control-label") }}
+                                   {% if form_cadastroModulos.udp_Port.errors %}
+                                        {{ form_cadastroModulos.udp_Port(class="form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for erro in form_cadastroModulos.udp_Port.errors %}
+                                                {{ erro }}
+                                            {% endfor %}
+                                        </div>
+                                   {% else %}
+                                        {{ form_cadastroModulos.udp_Port(class="form-control") }}
+                                   {% endif %}                                   
+                            </div>
+                            <!------------------------ 3 Campo -------------------------->
+                           <div class="form-group">
+                               {{ form_cadastroModulos.activeModule.label(class="form-check-label") }}
+                               {{ form_cadastroModulos.activeModule(class="form-check-input") }}
+                           </div>
+                        </fieldset>
+                        {{ form_cadastroModulos.botao_Salvar(class="btn btn-primary mt-2")  }}
+                   </form>
+                </div>
+            </div>
+
+            <!----- Tabela com os todos os Módulos Cadastrados ---->
+            <br>
+           <div class="row">
+                <div class="col col-10">
+                    <div class="table-responsive">
+                        <p class="titleTabModules"><strong>Módulos Cadastrados</strong></p>
+                        <table class="table">
+                            <thead>
+                                    <tr class="table-primary">
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Descrição do Módulo</th>
+                                        <th scope="col">IP do Módulo</th>
+                                        <th scope="col">Porta UDP</th>
+                                        <th scope="col">Ativo ?</th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr class="table-secondary">
+                                        <td>01</td>
+                                        <td>Modulo 01</td>
+                                        <td>192.168.2.1</td>
+                                        <td>8080</td>
+                                        <td>Sim</td>
+                                    </tr>
+                                    <tr class="table-danger">
+                                        <td>02</td>
+                                        <td>Modulo 02</td>
+                                        <td>192.168.2.2</td>
+                                        <td>8080</td>
+                                        <td>Não</td>
+                                    </tr>
+                                    <tr class="table-warning">
+                                        <td>03</td>
+                                        <td>Modulo 03</td>
+                                        <td>192.168.2.3</td>
+                                        <td>8080</td>
+                                        <td>Não</td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!----- Fim da Tabela com os todos os Módulos Cadastrados ---->
+        </div>
+{% endblock %}
