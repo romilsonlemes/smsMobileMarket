@@ -31,7 +31,7 @@ def usuarios():
 def login():
     form_login = FormLogin()
     form_criarconta = FormCriarConta()
-    if form_login.validate_on_submit()  and 'botao_submit_Login' in request.form:
+    if form_login.validate_on_submit() and 'botao_submit_Login' in request.form:
         #Verificar se o usuário existe
         usuario = Usuario.query.filter_by(email=form_login.email.data).first()
 
@@ -190,8 +190,41 @@ Páginas referentes o Sistema de Envio de Mensagens
 @app.route('/Modules', methods=['GET', 'POST'])
 @login_required
 def cad_Modules():
-    # cadModule = cadmodules.query.all()
     form_cadastroModulos = FormCadastroModulos()
+    if form_cadastroModulos.validate_on_submit() and 'botao_submit_Salvar_CadModulos' in request.form:
+        #Verificar se já existe o módulo Cadastrado
+        # 1a Validador - descrModule
+        cadmodulesDB = CadModules.query.filter_by(descrModule=form_cadastroModulos.descrModule.data).first()
+
+        # 2a Validador - fixed_ip
+        validar_fixedIP = CadModules.query.filter_by(fixed_ip=form_cadastroModulos.fixed_ip.data).first()
+
+        if cadmodulesDB and cadmodulesDB.descrModule == form_cadastroModulos.descrModule.data:
+            """Exibir mensagem dizendo que o Módulo já esta cadastrado """
+            print(f"Atenção este módulo: {form_cadastroModulos.descrModule.data} já esta cadastrado !!! Favor informar outro.")
+            flash(f"Atenção esta de decrição: {form_cadastroModulos.descrModule.data} já esta cadastrado !!", 'alert-info')
+            # Se ja existe a mesma descrição de módulo, volta para a página
+            return redirect( url_for('cad_Modules')) # Ficar na página Atual
+
+        elif validar_fixedIP:
+            print(f"Este IP {form_cadastroModulos.fixed_ip.data} já esta cadastrado !! É permitido apenas 1 IP único no sistema")
+            flash(f"Este IP {form_cadastroModulos.fixed_ip.data} já esta cadastrado !! É permitido apenas 1 IP único no sistema !", 'alert-info')
+            # Se ja existe o IP que esta tentando cadastrar, Recarrega a página atual
+            return redirect( url_for('cad_Modules')) # Recarrega a página atual
+
+        else:
+            # Salvar os dados do Cadastro de módulo
+            cadmodulesDB = CadModules(descrModule=form_cadastroModulos.descrModule.data,
+                                      fixed_ip=form_cadastroModulos.fixed_ip.data,
+                                      udpPort=int(form_cadastroModulos.udp_Port.data),
+                                      ativo=form_cadastroModulos.activeModule.data)
+            database.session.add(cadmodulesDB)
+            database.session.commit()
+            print(f"Atenção o módulo {form_cadastroModulos.descrModule.data} foi cadastrado com sucesso.")
+            flash(f"Atenção o módulo {form_cadastroModulos.descrModule.data} foi cadastrado com sucesso.", "alert-success")
+            # Depois que cadastrar o novo Registro, listar na tabela abaixo do cadastro
+            return redirect( url_for('cad_Modules')) # Ficar na página Atual
+
     return render_template('cadModules.html', form_cadastroModulos=form_cadastroModulos)
 
 

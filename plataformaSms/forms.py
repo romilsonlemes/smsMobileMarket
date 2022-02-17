@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, IntegerField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from plataformaSms.models import Usuario
+from plataformaSms.models import Usuario, CadModules
 from flask_login import current_user
 
 # A classe abaixo é utilizada para controlar os campos que terá no formulário
@@ -63,23 +63,22 @@ class FormCriarPost(FlaskForm):
 class FormCadastroModulos(FlaskForm):
     descrModule = StringField('Informar a descrição do Módulo', validators=[DataRequired(), Length(3, 20)])
     fixed_ip = StringField('Informar o IP do Módulo', validators=[DataRequired(), Length(7, 15)])
-    udp_Port = IntegerField('Informar a Porta UDP', validators=[DataRequired(), Length(2, 4)])
+    udp_Port = StringField('Informar a Porta UDP', validators=[DataRequired(), Length(2, 4)])
+    # udp_Port = IntegerField('Informar a Porta UDP', validators=[DataRequired(), Length(2, 4)])
     activeModule = BooleanField('Modulo Ativo ?')
-    botao_Salvar = SubmitField('Salvar')
-# ---------------------------------------
-    def validate_module(self, email):
-        pass
-        """"
-        cadModule = CadModules.query.filter_by(descr_module=descr_module.data).first()
-        if cadModule:
-            raise ValidationError(f'Este módulo já esta cadastrado com esta descrição')
-        """""
+    botao_submit_Salvar_CadModulos = SubmitField('Salvar')
 
+# ---------------------------------------
+    def validate_salvar_modulo(self, descrModule):
+        # 1o Validate - descrModule
+        cadmodulesDB = CadModules.query.filter_by(descr_module=descrModule.data).first()
+        if cadmodulesDB:
+            raise ValidationError(f'Este módulo: {descrModule.data} já esta cadastrado com esta descrição')
+# ---------------------------------------
 
 """"-----------------------------------------
 ----- CADASTRO DE CONFIGURAÇÕES DE XMLs ----- 
----------------------------------------------
-"""
+---------------------------------------------"""
 class FormCadConfiguraXmls(FlaskForm):
     # Configurar o Formato XMLS que vai mandar para o Equipamento
     descrModule = StringField('Informar a descrição do Módulo', validators=[DataRequired(), Length(3, 20)])
