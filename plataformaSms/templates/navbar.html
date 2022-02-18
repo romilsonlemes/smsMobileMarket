@@ -1,22 +1,30 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid container">
-    <a class="navbar-brand" href="#">Optin SMS Marketing</a>
+    <div class="image pe-2"> <img src="/static/icones/logo-optin.png" class="img-fluid" width="150"> </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Inicio</a>
+          <li class="nav-item dropdown">
+            <!-- <a class="nav-link" aria-current="page" href="/">Inicio</a> -->
+                <a class="nav-link dropdown-toggle" href="/" id="navbarInicioMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Início
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarInicioMenuLink">
+                    <li><a class="dropdown-item" href="#">Administrativo</a></li>
+                    <hr>
+                    <li><a class="dropdown-item" href="#">Cadastro</a></li>
+                        <ul class="dropdown-menu-cadastro" aria-labelledby="navbarCadastroMenuLink">
+                            <li><a class="dropdown-item" href="#">Servidor</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for ('cad_Modules') }}">Módulos</a></li>
+                        </ul>
+                    <hr>
+                    <li><a class="dropdown-item" href="#">Configurações</a></li>
+                        <ul class="dropdown-menu-configuracoes" aria-labelledby="navbarConfiguracoesMenuLink">
+                            <li><a class="dropdown-item" href="{{ url_for ('cad_conf_xmls') }}">Configurar XMLs</a></li>
+                        </ul>
+                </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for ('usuarios') }}">Usuários</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for ('contato') }}">Contatos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for ('cad_Modules') }}">Módulos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for ('cad_conf_xmls') }}">Configura XMLs</a>
           </li>
       </ul>
       <ul class="d-flex navbar-nav">
