@@ -6,45 +6,81 @@
           <li class="nav-item dropdown">
             <!-- <a class="nav-link" aria-current="page" href="/">Inicio</a> -->
                 <a class="nav-link dropdown-toggle" href="/" id="navbarInicioMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Início
+                    <img src="/static/icons_bootstrap/house-fill.svg" alt="Bootstrap"> Início
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarInicioMenuLink">
-                    <li><a class="dropdown-item" href="#">Administrativo</a></li>
-                    <hr>
-                    <li><a class="dropdown-item" href="#">Cadastro</a></li>
-                        <ul class="dropdown-menu-cadastro" aria-labelledby="navbarCadastroMenuLink">
-                            <li><a class="dropdown-item" href="#">Servidor</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for ('cad_Modules') }}">Módulos</a></li>
-                        </ul>
-                    <hr>
-                    <li><a class="dropdown-item" href="#">Configurações</a></li>
-                        <ul class="dropdown-menu-configuracoes" aria-labelledby="navbarConfiguracoesMenuLink">
-                            <li><a class="dropdown-item" href="{{ url_for ('cad_conf_xmls') }}">Configurar XMLs</a></li>
-                        </ul>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <img src="/static/icons_bootstrap/building.svg" alt="Bootstrap"> Administrativo
+                        </a>
+                    </li>
+                     <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">
+                            <img src="/static/icons_bootstrap/archive.svg" alt="Bootstrap"> Cadastros
+                        </a>
+                    </li>
+                    <!-- SubMenu de Cadastro Operadoras -->
+                    <li><a class="dropdown-item" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="/static/icons_bootstrap/reception-3.svg" alt="Bootstrap"> Operadoras de Telefonia
+                        </a>
+                    </li>
+                    <!-- SubMenu de Cadastro -->
+                    <li><a class="dropdown-item" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="/static/icons_bootstrap/server.svg" alt="Bootstrap"> Servidor
+                        </a>
+                    </li>
+
+                    <li><a class="dropdown-item" href="{{ url_for ('cad_Modules') }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="/static/icons_bootstrap/cpu-fill.svg" alt="Bootstrap"> Módulos
+                        </a>
+                    </li>
+                     <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">
+                            <img src="/static/icons_bootstrap/gear-fill.svg" alt="Bootstrap"> Configurações
+                        </a>
+                    </li>
+                    <!-- SubMenu de Cadastro -->
+                    <li><a class="dropdown-item" href="{{ url_for ('cad_conf_xmls') }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="/static/icons_bootstrap/filetype-xml.svg" alt="Bootstrap"> Configurar XMLs
+                        </a>
+                    </li>
                 </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for ('usuarios') }}">Usuários</a>
+            <a class="nav-link" href="{{ url_for ('usuarios') }}">
+                <img src="/static/icons_bootstrap/people-fill.svg" alt="Bootstrap"> Usuários
+            </a>
           </li>
       </ul>
       <ul class="d-flex navbar-nav">
           {% if current_user.is_authenticated %}
+          <!--
               <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for ('criar_post') }}">Criar Postl</a>
+                  <a class="nav-link" href="{{ url_for ('criar_post') }}">
+                      <img src="/static/icons_bootstrap/signpost-fill.svg" alt="Bootstrap"> Criar Postl
+                  </a>
+              </li>
+              -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('perfil') }}">
+                    <img src="/static/icons_bootstrap/person-badge.svg" alt="Bootstrap"> Meu Perfil
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for ('perfil') }}">Meu Perfil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for ('sair') }}">Sair</a>
+                <a class="nav-link" href="{{ url_for ('sair') }}">
+                    <img src="/static/icons_bootstrap/door-closed-fill.svg" alt="Bootstrap"> Sair
+                </a>
               </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for ('login') }}">Login</a>
+            <a class="nav-link" href="{{ url_for ('login') }}">
+                <img src="/static/icons_bootstrap/door-open-fill.svg" alt="Bootstrap"> Login</a>
           </li>
           {% endif %}
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for ('login') }}">Criar Conta</a>
+            <a class="nav-link" href="{{ url_for ('login') }}">
+                <img src="/static/icons_bootstrap/person-plus-fill.svg" alt="Bootstrap"> Criar Conta
+            </a>
           </li>
       </ul>
     </div>
