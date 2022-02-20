@@ -7,7 +7,11 @@
                 <div class="col col-5">
                    <form method="POST" action="" class="border p-4 mt-2">
                        {{ form_cadastroModulos.csrf_token }}
-                        <legend>Cadastrar Módulos</legend>
+                        <legend>
+                            <img src="/static/icons_bootstrap/cpu-fill.svg" width="35" height="35"  fill="currentColor" alt="Bootstrap">&nbsp;&nbsp;
+                            Cadastrar Módulos
+                        </legend>
+                       <hr>
                         <fieldset>
                             <div class="form-group">
                                 {{ form_cadastroModulos.descrModule.label(class="form-control-label") }}

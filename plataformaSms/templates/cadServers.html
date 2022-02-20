@@ -2,81 +2,81 @@
 
 {% block body %}
         <div class="container">
-            <!-- <h1>Configurações de XMLs</h1> -->
+            <!-- <h1>Cadastro de Servidores</h1> -->
            <div class="row">
                 <div class="col col-5">
                    <form method="POST" action="" class="border p-4 mt-2">
-                       {{ form_cad_conf_xmls.csrf_token }}
+                       {{ form_cadServers.csrf_token }}
                         <legend>
-                            <img src="/static/icons_bootstrap/filetype-xml.svg" width="35" height="35"  fill="currentColor" alt="Bootstrap">&nbsp;&nbsp;
-                            Configurações de XMLs
+                            <img src="/static/icons_bootstrap/server.svg" width="35" height="35"  fill="currentColor" alt="Bootstrap">&nbsp;&nbsp;
+                            Cadastrar Servidores
                         </legend>
                        <hr>
                         <fieldset>
                             <div class="form-group">
-                                {{ form_cad_conf_xmls.descrModule.label(class="form-control-label") }}
-                               {% if form_cad_conf_xmls.descrModule.errors %}
-                                    {{ form_cad_conf_xmls.descrModule(class="form-control is-invalid") }}
+                                {{ form_cadServers.descrServer.label(class="form-control-label") }}
+                               {% if form_cadServers.descrServer.errors %}
+                                    {{ form_cadServers.descrServer(class="form-control is-invalid") }}
                                     <div class="invalid-feedback">
-                                        {% for erro in form_cad_conf_xmls.descrModule.errors %}
+                                        {% for erro in form_cadServers.descrServer.errors %}
                                             {{ erro }}
                                         {% endfor %}
                                     </div>
                                {% else %}
-                                    {{ form_cad_conf_xmls.descrModule(class="form-control") }}
+                                    {{ form_cadServers.descrServer(class="form-control") }}
                                {% endif %}                                
                             </div>
                             <!------------------------ 2 Campo -------------------------->
                             <div class="form-group">
-                                {{ form_cad_conf_xmls.fixed_ip.label(class="form-control-label") }}
-                               {% if form_cad_conf_xmls.fixed_ip.errors %}
-                                    {{ form_cad_conf_xmls.fixed_ip(class="form-control is-invalid") }}
+                                {{ form_cadServers.fixed_ip.label(class="form-control-label") }}
+                               {% if form_cadServers.fixed_ip.errors %}
+                                    {{ form_cadServers.fixed_ip(class="form-control is-invalid") }}
                                     <div class="invalid-feedback">
-                                        {% for erro in form_cad_conf_xmls.fixed_ip.errors %}
+                                        {% for erro in form_cadServers.fixed_ip.errors %}
                                             {{ erro }}
                                         {% endfor %}
                                     </div>
                                {% else %}
-                                    {{ form_cad_conf_xmls.fixed_ip(class="form-control") }}
+                                    {{ form_cadServers.fixed_ip(class="form-control") }}
                                {% endif %}                                  
                             </div>
                             <!------------------------ 3 Campo -------------------------->
                             <div class="form-group">
-                                   {{ form_cad_conf_xmls.udp_Port.label(class="form-control-label") }}
-                                   {% if form_cad_conf_xmls.udp_Port.errors %}
-                                        {{ form_cad_conf_xmls.udp_Port(class="form-control is-invalid") }}
+                                   {{ form_cadServers.udp_Port.label(class="form-control-label") }}
+                                   {% if form_cadServers.udp_Port.errors %}
+                                        {{ form_cadServers.udp_Port(class="form-control is-invalid") }}
                                         <div class="invalid-feedback">
-                                            {% for erro in form_cad_conf_xmls.udp_Port.errors %}
+                                            {% for erro in form_cadServers.udp_Port.errors %}
                                                 {{ erro }}
                                             {% endfor %}
                                         </div>
                                    {% else %}
-                                        {{ form_cad_conf_xmls.udp_Port(class="form-control") }}
+                                        {{ form_cadServers.udp_Port(class="form-control") }}
                                    {% endif %}                                   
                             </div>
                             <!------------------------ 3 Campo -------------------------->
                            <div class="form-group">
-                               {{ form_cad_conf_xmls.activeModule.label(class="form-check-label") }}
-                               {{ form_cad_conf_xmls.activeModule(class="form-check-input") }}
+                               {{ form_cadServers.activeServer.label(class="form-check-label") }}
+                               {{ form_cadServers.activeServer(class="form-check-input") }}
                            </div>
                         </fieldset>
-                        {{ form_cad_conf_xmls.botao_Salvar(class="btn btn-primary mt-2")  }}
+                        {{ form_cadServers.botao_submit_Salvar_CadServers(class="btn btn-primary mt-2")  }}
                    </form>
                 </div>
             </div>
 
-            <!----- Tabela com os todos os Módulos Cadastrados ---->
+            <!----- Tabela com os todos os Servidores Cadastrados ---->
             <br>
            <div class="row">
                 <div class="col col-10">
                     <div class="table-responsive">
-                        <p class="titleTabModules"><strong>Módulos Cadastrados</strong></p>
+                        <p class="titleTabModules"><strong>Servidores Cadastrados</strong></p>
                         <table class="table">
                             <thead>
                                     <tr class="table-primary">
                                         <th scope="col">Id</th>
-                                        <th scope="col">Descrição do Módulo</th>
-                                        <th scope="col">IP do Módulo</th>
+                                        <th scope="col">Descrição do Servidor</th>
+                                        <th scope="col">IP do Servidor</th>
                                         <th scope="col">Porta UDP</th>
                                         <th scope="col">Ativo ?</th>
                                     </tr>
@@ -84,21 +84,21 @@
                             <tbody>
                                     <tr class="table-secondary">
                                         <td>01</td>
-                                        <td>Modulo 01</td>
+                                        <td>Servidor 01</td>
                                         <td>192.168.2.1</td>
                                         <td>8080</td>
                                         <td>Sim</td>
                                     </tr>
                                     <tr class="table-danger">
                                         <td>02</td>
-                                        <td>Modulo 02</td>
+                                        <td>Servidor 02</td>
                                         <td>192.168.2.2</td>
                                         <td>8080</td>
                                         <td>Não</td>
                                     </tr>
                                     <tr class="table-warning">
                                         <td>03</td>
-                                        <td>Modulo 03</td>
+                                        <td>Servidor 03</td>
                                         <td>192.168.2.3</td>
                                         <td>8080</td>
                                         <td>Não</td>
@@ -108,6 +108,6 @@
                     </div>
                 </div>
             </div>
-            <!----- Fim da Tabela com os todos os Módulos Cadastrados ---->
+            <!----- Fim da Tabela com os todos os Servidores Cadastrados ---->
         </div>
 {% endblock %}

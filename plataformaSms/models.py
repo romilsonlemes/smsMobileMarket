@@ -11,7 +11,6 @@ from flask_login import UserMixin
 def load_usuario(id_usuario):
     return Usuario.query.get(int(id_usuario))
 
-
 class Usuario(database.Model, UserMixin):
     id = database.Column(database.Integer, primary_key=True)
     username = database.Column(database.String, nullable=False)
@@ -26,7 +25,7 @@ class Usuario(database.Model, UserMixin):
     def contar_posts(self):
         return len(self.posts)
 
-
+# ----------------------------------------------------------------
 class Post(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     titulo = database.Column(database.String, nullable=False)
@@ -38,8 +37,10 @@ class Post(database.Model):
     id_usuario = database.Column(database.Integer, database.ForeignKey('usuario.id'), nullable=False)
     # Obs: Por padrão ao informar a tabela estrangeira
 
+# ----------------------------------------------------------------
 
 """ Cadastros das tabelas da Central de envio de Mensagens """
+
 class CadModules(database.Model):
     id = database.Column(database.Integer, primary_key=True)
     descrModule = database.Column(database.String, nullable=False)
@@ -49,3 +50,17 @@ class CadModules(database.Model):
 
     """ Criar relacionamentos entre tabelas """
 
+
+# ----------------------------------------------------------------
+
+""" Cadastro dos Servidores que controlarão a central Telefonica """
+class CadServers(database.Model):
+    id = database.Column(database.Integer, primary_key=True)
+    descrServer = database.Column(database.String, nullable=False)
+    fixed_ip = database.Column(database.String, nullable=False, unique=True)
+    udpPort = database.Column(database.Integer, nullable=False)
+    ativo = database.Column(database.Boolean, nullable=False)
+
+    """ Criar relacionamentos entre tabelas """
+
+# ----------------------------------------------------------------
