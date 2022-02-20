@@ -2,9 +2,9 @@ import flask_bcrypt
 from flask import render_template, redirect, url_for, flash, request, abort
 from plataformaSms import app, database, bcrypt
 from plataformaSms.forms import FormLogin, FormCriarConta, FormEditarPerfil, FormCadastroModulos,\
-     FormCadConfiguraXmls, \
+     FormCadastroServers, FormCadConfiguraXmls, \
      FormCriarPost
-from plataformaSms.models import Usuario, Post, CadModules
+from plataformaSms.models import Usuario, Post, CadServers, CadModules
 from flask_login import login_user, logout_user, current_user, login_required
 import secrets
 import os
@@ -227,6 +227,55 @@ def cad_Modules():
 
     return render_template('cadModules.html', form_cadastroModulos=form_cadastroModulos)
 
+#**********************************************************************************
+#**********************************************************************************
+
+"""
+Configuração do Cadastro de Servidores
+"""
+@app.route('/servers', methods=['GET', 'POST'])
+@login_required
+def cad_Servers():
+    form_cadServers = FormCadastroServers()
+    if form_cadServers.validate_on_submit() and 'botao_submit_Salvar_CadServers' in request.form:
+        #Verificar se já existe o servidor Cadastrado
+        # 1a Validador - descrServer
+        cadServersDB = CadServers.query.filter_by(descrServer=form_cadServers.descrServer.data).first()
+
+        # 2a Validador - fixed_ip
+        validar_fixedIP = CadServers.query.filter_by(fixed_ip=form_cadServers.fixed_ip.data).first()
+
+        if cadServersDB and cadServersDB.descrServer == form_cadServers.descrServer.data:
+            """Exibir mensagem dizendo que o Servidor já esta cadastrado """
+            print(f"Atenção este servidor: {form_cadServers.descrServer.data} já esta cadastrado !!! Favor informar outro.")
+            flash(f"Atenção esta de decrição: {form_cadServers.descrServer.data} já esta cadastrado !!", 'alert-info')
+            # Se ja existe a mesma descrição de servidor, volta para a página
+            return redirect( url_for('cad_Servers')) # Ficar na página Atual
+
+        elif validar_fixedIP:
+            print(f"Este IP {form_cadServers.fixed_ip.data} já esta cadastrado !! É permitido apenas 1 IP único no sistema")
+            flash(f"Este IP {form_cadServers.fixed_ip.data} já esta cadastrado !! É permitido apenas 1 IP único no sistema !", 'alert-info')
+            # Se ja existe o IP que esta tentando cadastrar, Recarrega a página atual
+            return redirect( url_for('cad_Servers')) # Recarrega a página atual
+
+        else:
+            # Salvar os dados do Cadastro de servidor
+            cadServerDB = CadServers(descrServer=form_cadServers.descrServer.data,
+                                      fixed_ip=form_cadServers.fixed_ip.data,
+                                      udpPort=int(form_cadServers.udp_Port.data),
+                                      ativo=form_cadServers.activeServer.data)
+            database.session.add(cadServerDB)
+            database.session.commit()
+            print(f"Atenção o servidor {form_cadServers.descrServer.data} foi cadastrado com sucesso.")
+            flash(f"Atenção o servidor {form_cadServers.descrServer.data} foi cadastrado com sucesso.", "alert-success")
+            # Depois que cadastrar o novo Registro, listar na tabela abaixo do cadastro
+            return redirect( url_for('cad_Servers')) # Ficar na página Atual
+
+    return render_template('cadServers.html', form_cadServers=form_cadServers)
+
+
+#**********************************************************************************
+#**********************************************************************************
 
 """
 Páginas referentes o Sistema de Envio de Mensagens

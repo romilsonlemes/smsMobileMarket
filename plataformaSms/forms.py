@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, IntegerField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from plataformaSms.models import Usuario, CadModules
+from plataformaSms.models import Usuario, CadModules, CadServers
 from flask_login import current_user
 
 # A classe abaixo é utilizada para controlar os campos que terá no formulário
@@ -56,9 +56,34 @@ class FormCriarPost(FlaskForm):
     corpo           = TextAreaField('Escreva o seu Post Aqui', validators=[DataRequired()])
     botao_submit    = SubmitField('Criar Post')
 
-""""---------------------------------------
------ Novos Formularios para a Optin  ----- 
+"""
+*********************************************************************************
+-----                       Novos Formularios para a Optin                  ----- 
+*********************************************************************************
+"""
+"""
 -------------------------------------------
+-----   CADASTRO DE SERVIDORES        ----- 
+-------------------------------------------
+"""
+class FormCadastroServers(FlaskForm):
+    descrServer = StringField('Informar a descrição do Servidor', validators=[DataRequired(), Length(3, 20)])
+    fixed_ip = StringField('Informar o IP do Servidor', validators=[DataRequired(), Length(7, 15)])
+    udp_Port = StringField('Informar a Porta UDP', validators=[DataRequired(), Length(2, 4)])
+    activeServer = BooleanField('Servidor Ativo ?')
+    botao_submit_Salvar_CadServers = SubmitField('Salvar')
+# ---------------------------------------
+    def validate_salvar_server(self, descrServer):
+        # 1o Validate - descrServer
+        cadServersDB = CadServers.query.filter_by(descrServer=descrServer.data).first()
+        if cadServersDB:
+            raise ValidationError(f'Este servidor: {descrServer.data} já esta cadastrado com esta descrição')
+# ---------------------------------------
+
+"""
+------------------------------------------
+-----    CADASTRO DE MODULOS         ----- 
+------------------------------------------
 """
 class FormCadastroModulos(FlaskForm):
     descrModule = StringField('Informar a descrição do Módulo', validators=[DataRequired(), Length(3, 20)])
@@ -67,7 +92,6 @@ class FormCadastroModulos(FlaskForm):
     # udp_Port = IntegerField('Informar a Porta UDP', validators=[DataRequired(), Length(2, 4)])
     activeModule = BooleanField('Modulo Ativo ?')
     botao_submit_Salvar_CadModulos = SubmitField('Salvar')
-
 # ---------------------------------------
     def validate_salvar_modulo(self, descrModule):
         # 1o Validate - descrModule
@@ -75,10 +99,11 @@ class FormCadastroModulos(FlaskForm):
         if cadmodulesDB:
             raise ValidationError(f'Este módulo: {descrModule.data} já esta cadastrado com esta descrição')
 # ---------------------------------------
-
-""""-----------------------------------------
------ CADASTRO DE CONFIGURAÇÕES DE XMLs ----- 
----------------------------------------------"""
+"""
+-----____------------------------------------
+----  CADASTRO DE CONFIGURAÇÕES DE XMLs ----- 
+---------------------------------------------
+"""
 class FormCadConfiguraXmls(FlaskForm):
     # Configurar o Formato XMLS que vai mandar para o Equipamento
     descrModule = StringField('Informar a descrição do Módulo', validators=[DataRequired(), Length(3, 20)])
