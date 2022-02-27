@@ -16,6 +16,7 @@ app.config['SECRET_KEY'] = '59940c20166524157d996d8ba6749e6b'
 # Configurações de acesso ao Banco de Dados
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/smsMobileOptin.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['GOOGLE_API_KEY'] = 'AIzaSyBXA-C0q36RU7fXbotKdOnT1tpCf02LNec'
 
 
 # Criar o Banco de dados Físic

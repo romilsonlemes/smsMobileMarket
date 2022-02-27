@@ -1,0 +1,31 @@
+<!-- Ver o video abaixo de exemplo
+     https://youtu.be/WrzA8oqcxjA
+     -->
+
+{% block scripts %}
+<html>
+  <head>
+    <title>Geolocation</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="static/googlemaps.css" />
+    <script src="static/config_googlemaps.js"></script>
+  </head>
+  <body>
+  <div id="detalhe_Cord" style="display:none;margin:0;padding:0 auto;padding-top:0;border:0px;"></div>
+      <input type="hidden" id="flatitude" name="flatitude" value="0"><br>
+      <input type="hidden" id="flongitude" name="flongitude" value="0"><br><br>
+      <input type="hidden" id="faccuracy" name="faccuracy" value="0"><br>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXA-C0q36RU7fXbotKdOnT1tpCf02LNec&callback=initMap"
+                async
+    ></script>
+  </body>
+</html>
+
+
+{% endblock %}

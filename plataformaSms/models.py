@@ -47,6 +47,7 @@ class CadModules(database.Model):
     fixed_ip = database.Column(database.String, nullable=False, unique=True)
     udpPort = database.Column(database.Integer, nullable=False)
     ativo = database.Column(database.Boolean, nullable=False)
+    connected = database.Column(database.Boolean, nullable=False, default=False)
 
     """ Criar relacionamentos entre tabelas """
 
@@ -60,6 +61,22 @@ class CadServers(database.Model):
     fixed_ip = database.Column(database.String, nullable=False, unique=True)
     udpPort = database.Column(database.Integer, nullable=False)
     ativo = database.Column(database.Boolean, nullable=False)
+
+    """ Criar relacionamentos entre tabelas """
+
+# ----------------------------------------------------------------
+
+""" Dados Capturados dos Celulares """
+class phone_data(database.Model):
+    id = database.Column(database.Integer, primary_key=True)
+    data_received = database.Column(database.String, nullable=False)
+    hora_received = database.Column(database.String, nullable=False)
+    operadora = database.Column(database.String, nullable=False)
+    evento = database.Column(database.String, nullable=False)
+    emei = database.Column(database.String, nullable=False)
+    imsi = database.Column(database.String, nullable=False)
+    modulo = database.Column(database.String, nullable=False)
+    msg_sent = database.Column(database.Boolean, nullable=False)
 
     """ Criar relacionamentos entre tabelas """
 

@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, IntegerField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from plataformaSms.models import Usuario, CadModules, CadServers
+from plataformaSms.models import Usuario, CadModules, CadServers, phone_data
 from flask_login import current_user
 
 # A classe abaixo é utilizada para controlar os campos que terá no formulário
@@ -119,3 +119,15 @@ class FormCadConfiguraXmls(FlaskForm):
         if cadModule:
             raise ValidationError(f'Este módulo já esta cadastrado com esta descrição')
         """""
+
+
+
+# A classe dos campos do Formulário de Login
+class FormConsultarDadosCentral(FlaskForm):
+    #operadora           = StringField('Operadora', validators=[DataRequired()])
+    """
+    senha           = PasswordField('Senha', validators=[DataRequired(), Length(6, 20)])
+    lembrar_dados   =   BooleanField('Lembrar dados e acesso')
+    """
+    botao_submit_ConsultarDados = SubmitField('Buscar Dados')
+
