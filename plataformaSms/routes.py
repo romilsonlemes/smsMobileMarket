@@ -2,9 +2,9 @@ import flask_bcrypt
 from flask import render_template, redirect, url_for, flash, request, abort
 from plataformaSms import app, database, bcrypt
 from plataformaSms.forms import FormLogin, FormCriarConta, FormEditarPerfil, FormCadastroModulos,\
-     FormCadastroServers, FormCadConfiguraXmls, \
-     FormCriarPost
-from plataformaSms.models import Usuario, Post, CadServers, CadModules
+     FormCadastroServers, FormCadConfiguraXmls, FormConsultarDadosCentral,\
+    FormCriarPost
+from plataformaSms.models import Usuario, Post, CadServers, CadModules, phone_data
 from flask_login import login_user, logout_user, current_user, login_required
 import secrets
 import os
@@ -273,6 +273,19 @@ def cad_Servers():
 
     return render_template('cadServers.html', form_cadServers=form_cadServers)
 
+"""
+Consultar as informações Coletadas da Central Telefonica
+"""
+
+
+
+@app.route('/consultardados') #, methods=['GET', 'POST'])
+@login_required
+def consultarDados():
+    form_ConsultarDados = FormConsultarDadosCentral()
+    # Busca os Dados da Base de Dados
+    listarDados = phone_data.query.all()
+    return render_template('gerenciarenvio.html', form_ConsultarDados=form_ConsultarDados, listarDados=listarDados)
 
 #**********************************************************************************
 #**********************************************************************************

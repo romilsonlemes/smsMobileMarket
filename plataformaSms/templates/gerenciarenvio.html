@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <!-- <h3>Consultar Dados Coletados do Equipamento</h3> -->
+        <div class="row">
+            <div class="col col-12">
+                <form method="POST" action="" class="border p-1 mt-1">
+                {{ form_ConsultarDados.csrf_token }}
+                    <!--<legend>Consultar Dados Coletados</legend> -->
+                    <br>
+                    {{ form_ConsultarDados.botao_submit_ConsultarDados(class="btn btn-primary mt-2")  }}
+                    <hr>
+                    <fieldset>
+                           <div class="form-group">
+                               <h6><strong>Lista de dados de Celulares Coletados</strong></h6>
+                               <br>
+                                <table id="tabdados" class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Data Recebimento</th>
+                                            <th>Hora Recebimento</th>
+                                            <th>Operadora</th>
+                                            <th>Evento</th>
+                                            <th>Emei</th>
+                                            <th>Imsi</th>
+                                            <th>Modulo</th>
+                                            <th>Enviado Mensagem ?</th>
+                                        <tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for dado in listarDados %}
+                                            <tr>
+                                                <td>{{ dado.id }}</td>
+                                                <td>{{ dado.data_received }}</td>
+                                                <td>{{ dado.hora_received }}</td>
+                                                <td>{{ dado.operadora }}</td>
+                                                <td>{{ dado.evento }}</td>
+                                                <td>{{ dado.emei }}</td>
+                                                <td>{{ dado.imsi }}</td>
+                                                <td>{{ dado.modulo }}</td>
+                                                <td>{{ dado.msg_sent}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                           </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function () {
+            $('#tabdados').DataTable({
+                columns: [
+                    null,
+                    {searchable: true},
+                    {orderable: true},
+                    {orderable: true},
+                    {orderable: false, searchable: false},
+                    {orderable: false, searchable: false},
+                    {orderable: false, searchable: false},
+                    {orderable: false, searchable: false},
+                    null],
+                });
+            });
+    </script>
+{% endblock %}
