@@ -1,6 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid container">
-    <div class="image pe-2"> <img src="/static/icones/logo-optin.png" class="img-fluid" width="150"> </div>
+    <div class="image pe-2">
+        <a href="/" id="navbarVoltarInicio">
+            <img src="/static/icones/logo-optin.png" class="img-fluid" width="150">
+        </a>
+    </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
@@ -44,11 +48,26 @@
                             <img src="/static/icons_bootstrap/filetype-xml.svg" alt="Bootstrap"> Configurar XMLs
                         </a>
                     </li>
+                     <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">
+                            <img src="/static/icons_bootstrap/clipboard-data.svg" alt="Bootstrap"> Relatórios
+                        </a>
+                    </li>
+                    <!-- SubMenu de Cadastro -->
+                    <li><a class="dropdown-item" href="{{ url_for ('cad_conf_xmls') }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="/static/icons_bootstrap/send-check-fill.svg" alt="Bootstrap"> Envio de Mensagens Por Operadora
+                        </a>
+                    </li>
                 </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for ('usuarios') }}">
                 <img src="/static/icons_bootstrap/people-fill.svg" alt="Bootstrap"> Usuários
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for ('consultarDados') }}">
+                <img src="/static/icons_bootstrap/telephone-inbound.svg" alt="Bootstrap"> Consultar Dados
             </a>
           </li>
       </ul>
