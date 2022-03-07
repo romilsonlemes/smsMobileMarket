@@ -47,6 +47,7 @@ class CadModules(database.Model):
     fixed_ip = database.Column(database.String, nullable=False, unique=True)
     udpPort = database.Column(database.Integer, nullable=False)
     ativo = database.Column(database.Boolean, nullable=False)
+    connected = database.Column(database.Boolean, nullable=False, default=False)
 
     """ Criar relacionamentos entre tabelas """
 

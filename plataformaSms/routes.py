@@ -273,19 +273,6 @@ def cad_Servers():
 
     return render_template('cadServers.html', form_cadServers=form_cadServers)
 
-"""
-Consultar as informações Coletadas da Central Telefonica
-"""
-
-
-
-@app.route('/consultardados') #, methods=['GET', 'POST'])
-@login_required
-def consultarDados():
-    form_ConsultarDados = FormConsultarDadosCentral()
-    # Busca os Dados da Base de Dados
-    listarDados = phone_data.query.all()
-    return render_template('gerenciarenvio.html', form_ConsultarDados=form_ConsultarDados, listarDados=listarDados)
 
 #**********************************************************************************
 #**********************************************************************************

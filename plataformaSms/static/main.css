@@ -51,3 +51,14 @@
 .fundodivlogo {
     background: #f2f5f8 !important;
 }
+
+#div_tabdados{
+    max-width: 100%;
+    height: auto;
+    overflow: scroll;
+}
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td, .tg th{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;font-weight:normal;padding:50px 50px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.
+.tg .tg-yw4l{vertical-align:top}
