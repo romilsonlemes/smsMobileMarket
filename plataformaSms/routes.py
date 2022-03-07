@@ -2,9 +2,9 @@ import flask_bcrypt
 from flask import render_template, redirect, url_for, flash, request, abort
 from plataformaSms import app, database, bcrypt
 from plataformaSms.forms import FormLogin, FormCriarConta, FormEditarPerfil, FormCadastroModulos,\
-     FormCadastroServers, FormCadConfiguraXmls, FormConsultarDadosCentral,\
-    FormCriarPost
-from plataformaSms.models import Usuario, Post, CadServers, CadModules, phone_data
+     FormCadastroServers, FormCadastroOperadoras, FormCadConfiguraXmls, \
+    FormConsultarDadosCentral, FormCriarPost
+from plataformaSms.models import Usuario, Post, CadServers, CadModules, CadOperadoras, phone_data
 from flask_login import login_user, logout_user, current_user, login_required
 import secrets
 import os
@@ -227,8 +227,7 @@ def cad_Modules():
 
     return render_template('cadModules.html', form_cadastroModulos=form_cadastroModulos)
 
-#**********************************************************************************
-#**********************************************************************************
+
 
 """
 Configuração do Cadastro de Servidores
@@ -276,9 +275,6 @@ def cad_Servers():
 """
 Consultar as informações Coletadas da Central Telefonica
 """
-
-
-
 @app.route('/consultardados') #, methods=['GET', 'POST'])
 @login_required
 def consultarDados():
@@ -310,3 +306,38 @@ def minhalocalizacao():
     # Retrieve geoip data for the given requester
     # return render_template('mapearGeoLocalizacao.html')
     return render_template('geolocalizacao.html', GOOGLE_API_KEY=app.config["GOOGLE_API_KEY"])
+
+#**********************************************************************************
+#**********************************************************************************
+
+"""
+Cadastro de Operadoras de Telefonia
+"""
+@app.route('/cadoperadoras', methods=['GET', 'POST'])
+@login_required
+def cad_Operadoras():
+    form_cadOperadoras = FormCadastroOperadoras()
+    if form_cadOperadoras.validate_on_submit() and 'botao_submit_Salvar_CadOperadoras' in request.form:
+        #Verificar se já existe a Operadora Cadastrada
+        # 1a Validador - descrOperadora
+        cadOperadoraDB = CadOperadoras.query.filter_by(descrOperadora=form_cadOperadoras.descrOperadora.data).first()
+
+        if cadOperadoraDB and cadOperadoraDB.descrOperadora == form_cadOperadoras.descrOperadora.data:
+            """Exibir mensagem dizendo que a Operadora já esta cadastrada """
+            print(f"Atenção esta operadora : {form_cadOperadoras.descrOperadora.data} já esta cadastrada !!! Favor informar outra.")
+            flash(f"Atenção esta de decrição: {form_cadOperadoras.descrOperadora.data} já esta cadastrada !!", 'alert-info')
+            # Se ja existe a mesma descrição de Operadora, volta para a página
+            return redirect( url_for('cad_Operadoras')) # Ficar na página Atual
+        else:
+            # Salvar os dados do Cadastro de Operadoras de Telefonia
+            cadOperadoraDB = CadOperadoras(descrOperadora=form_cadOperadoras.descrOperadora.data,
+                                           ativa=form_cadOperadoras.ativa.data,
+                                           foto_logo=form_cadOperadoras.foto_logo.data)
+            database.session.add(cadOperadoraDB)
+            database.session.commit()
+            print(f"Atenção a operadora {form_cadOperadoras.descrOperadora.data} foi cadastrada com sucesso.")
+            flash(f"Atenção a operadora {form_cadOperadoras.descrOperadora.data} foi cadastrada com sucesso.", "alert-success")
+            # Depois que cadastrar o novo Registro, listar na tabela abaixo do cadastro
+            return redirect( url_for('cad_Operadoras')) # Ficar na página Atual
+
+    return render_template('cadOperadoras.html', form_cadOperadoras=form_cadOperadoras)

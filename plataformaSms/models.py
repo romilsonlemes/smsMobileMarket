@@ -81,3 +81,9 @@ class phone_data(database.Model):
     """ Criar relacionamentos entre tabelas """
 
 # ----------------------------------------------------------------
+""" Cadastro de Operadoras de Telefonia """
+class CadOperadoras(database.Model):
+    id = database.Column(database.Integer, primary_key=True)
+    descrOperadora = database.Column(database.String, nullable=False)
+    foto_logo = database.Column(database.String, default='default.jpg')
+    ativa = database.Column(database.Boolean, nullable=False)
