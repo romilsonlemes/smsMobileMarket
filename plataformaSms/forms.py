@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, IntegerField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from plataformaSms.models import Usuario, CadModules, CadServers, phone_data
+from plataformaSms.models import Usuario, CadModules, CadServers, CadOperadoras, phone_data
 from flask_login import current_user
 
 # A classe abaixo é utilizada para controlar os campos que terá no formulário
@@ -81,6 +81,25 @@ class FormCadastroServers(FlaskForm):
 # ---------------------------------------
 
 """
+--------------------------------------------------------
+-----   CADASTRO DE OPERADORAS DE TELEFONIA        ----- 
+--------------------------------------------------------
+"""
+class FormCadastroOperadoras(FlaskForm):
+    descrOperadora = StringField('Informar a descrição da Operadora', validators=[DataRequired(), Length(3, 20)])
+    foto_logo = StringField('Informar o Logo da Operadora', validators=[DataRequired(), Length(1, 100)])
+    ativa = BooleanField('Operadora Ativa ?')
+    botao_submit_Salvar_CadOperadoras = SubmitField('Salvar')
+# ---------------------------------------
+    def validate_salvar_Operadora(self, descrOperadora):
+        # 1o Validate - descrOperadora
+        cadOperadorasDB = CadOperadoras.query.filter_by(descrOperadora=descrOperadora.data).first()
+        if cadOperadorasDB:
+            raise ValidationError(f'Esta Operadora: {descrOperadora.data} já esta cadastrada com esta descrição')
+# ---------------------------------------
+
+
+"""
 ------------------------------------------
 -----    CADASTRO DE MODULOS         ----- 
 ------------------------------------------
@@ -119,8 +138,6 @@ class FormCadConfiguraXmls(FlaskForm):
         if cadModule:
             raise ValidationError(f'Este módulo já esta cadastrado com esta descrição')
         """""
-
-
 
 # A classe dos campos do Formulário de Login
 class FormConsultarDadosCentral(FlaskForm):

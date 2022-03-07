@@ -1,6 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid container">
-    <div class="image pe-2"> <img src="/static/icones/logo-optin.png" class="img-fluid" width="150"> </div>
+    <div class="image pe-2">
+        <a href="/" id="navbarVoltarInicio">
+            <img src="/static/icones/logo-optin.png" class="img-fluid" width="150">
+        </a>
+    </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
@@ -20,7 +24,7 @@
                         </a>
                     </li>
                     <!-- SubMenu de Cadastro Operadoras -->
-                    <li><a class="dropdown-item" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a class="dropdown-item"  href="{{ url_for ('cad_Operadoras') }}"> &nbsp;&nbsp;
                             <img src="/static/icons_bootstrap/reception-3.svg" alt="Bootstrap"> Operadoras de Telefonia
                         </a>
                     </li>
@@ -44,6 +48,16 @@
                             <img src="/static/icons_bootstrap/filetype-xml.svg" alt="Bootstrap"> Configurar XMLs
                         </a>
                     </li>
+                     <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">
+                            <img src="/static/icons_bootstrap/clipboard-data.svg" alt="Bootstrap"> Relatórios
+                        </a>
+                    </li>
+                    <!-- SubMenu de Cadastro -->
+                    <li><a class="dropdown-item" href="{{ url_for ('cad_conf_xmls') }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="/static/icons_bootstrap/send-check-fill.svg" alt="Bootstrap"> Envio de Mensagens Por Operadora
+                        </a>
+                    </li>
                 </ul>
           </li>
           <li class="nav-item">
@@ -51,16 +65,22 @@
                 <img src="/static/icons_bootstrap/people-fill.svg" alt="Bootstrap"> Usuários
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for ('consultarDados') }}">
+                <img src="/static/icons_bootstrap/telephone-inbound.svg" alt="Bootstrap"> Consultar Dados
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for ('minhalocalizacao') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-geo-alt text-danger" viewBox="0 0 20 20">
+                  <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                  <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg>Minha Localização
+            </a>
+          </li>
       </ul>
       <ul class="d-flex navbar-nav">
           {% if current_user.is_authenticated %}
-          <!--
-              <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for ('criar_post') }}">
-                      <img src="/static/icons_bootstrap/signpost-fill.svg" alt="Bootstrap"> Criar Postl
-                  </a>
-              </li>
-              -->
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for ('perfil') }}">
                     <img src="/static/icons_bootstrap/person-badge.svg" alt="Bootstrap"> Meu Perfil

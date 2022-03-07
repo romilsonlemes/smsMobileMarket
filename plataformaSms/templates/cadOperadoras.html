@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block body %}
+        <div class="container">
+            <!-- <h1>Cadastro de Operadoras</h1> -->
+           <div class="row">
+                <div class="col col-6">
+                   <form method="POST" action="" class="border p-4 mt-2">
+                       {{ form_cadOperadoras.csrf_token }}
+                        <legend>
+                            <!--
+                            <img src="/static/icons_bootstrap/whatsapp.svg" width="35" height="35"  fill="currentColor" alt="Bootstrap">&nbsp;&nbsp;
+                            -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-whatsapp text-success" viewBox="0 0 20 20">
+                                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                            </svg>
+                            Cadastro de Operadoras de Telefonia
+                        </legend>
+                       <hr>
+                        <fieldset>
+                            <div class="form-group">
+                                {{ form_cadOperadoras.descrOperadora.label(class="form-control-label") }}
+                               {% if form_cadOperadoras.descrOperadora.errors %}
+                                    {{ form_cadOperadoras.descrOperadora(class="form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for erro in form_cadOperadoras.descrOperadora.errors %}
+                                            {{ erro }}
+                                        {% endfor %}
+                                    </div>
+                               {% else %}
+                                    {{ form_cadOperadoras.descrOperadora(class="form-control") }}
+                               {% endif %}                                
+                            </div>
+                            <!------------------------ 2 Campo -------------------------->
+                            <div class="form-group">
+                                {{ form_cadOperadoras.foto_logo.label(class="form-control-label") }}
+                               {% if form_cadOperadoras.foto_logo.errors %}
+                                    {{ form_cadOperadoras.foto_logo(class="form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for erro in form_cadOperadoras.foto_logo.errors %}
+                                            {{ erro }}
+                                        {% endfor %}
+                                    </div>
+                               {% else %}
+                                    {{ form_cadOperadoras.foto_logo(class="form-control") }}
+                               {% endif %}                                  
+                            </div>
+                            <!------------------------ 3 Campo -------------------------->
+                           <div class="form-group">
+                               {{ form_cadOperadoras.ativa.label(class="form-check-label") }}
+                               {{ form_cadOperadoras.ativa(class="form-check-input") }}
+                           </div>
+                        </fieldset>
+                        {{ form_cadOperadoras.botao_submit_Salvar_CadOperadoras(class="btn btn-primary mt-2")  }}
+                   </form>
+                </div>
+            </div>
+
+            <!----- Tabela com todas os Operadoras Cadastradas ---->
+            <br>
+           <div class="row">
+                <div class="col col-10">
+                    <div class="table-responsive">
+                        <p class="titleTabModules"><strong>Operadoras Cadastradas</strong></p>
+                        <table class="table">
+                            <thead>
+                                    <tr class="table-primary">
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Descrição da Operadora</th>
+                                        <th scope="col">Logo da Operadora</th>
+                                        <th scope="col">Ativo ?</th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr class="table-secondary">
+                                        <td>01</td>
+                                        <td>Claro Telefonia</td>
+                                        <td>Claro.jpg</td>
+                                        <td>Sim</td>
+                                    </tr>
+                                    <tr class="table-danger">
+                                        <td>02</td>
+                                        <td>Tim Telefonia</td>
+                                        <td>Tim.jpg</td>
+                                        <td>Não</td>
+                                    </tr>
+                                    <tr class="table-warning">
+                                        <td>03</td>
+                                        <td>Vivo telefonia</td>
+                                        <td>Vivo.jpg</td>
+                                        <td>Sim</td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!----- Fim da Tabela com todas as Operadoras de Telefonia Cadastradas ---->
+        </div>
+{% endblock %}
