@@ -1,0 +1,139 @@
+/*** Cellular-Z 20220224 15:32:05 ***/
+{
+  "cell": {
+    "arfcn": 872,
+    "bsic": 55,
+    "cdmadbm": -2,
+    "cdmaecio": -200,
+    "ci": 37048,
+    "evdodbm": -2,
+    "evdoecio": -200,
+    "lac": 16195,
+    "rxlev": -71,
+    "type": "GSM"
+  },
+  "datanet": "EDGE",
+  "iccid": "8955311929864464996",
+  "imei": "357854081452194",
+  "imsi": "724311933545712",
+  "is_data_slot": 0,
+  "is_voice_slot": 1,
+  "mcc": "724",
+  "mnc": "31",
+  "msisdn": "+5511962410553",
+  "ncells": [
+    {
+      "arfcn": 870,
+      "bsic": 51,
+      "ci": 37049,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 850,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 844,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 747,
+      "bsic": 9,
+      "ci": 37047,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 741,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 752,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 753,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 875,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 876,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 878,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 879,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 841,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 751,
+      "bsic": 58,
+      "ci": 39429,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 755,
+      "bsic": 255,
+      "ci": 40937,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 743,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    }
+  ],
+  "netoperator": "Oi",
+  "simoperator": "Oi",
+  "slot_sn": 0,
+  "voicenet": "EDGE",
+  "time": "20220224 15:32:05",
+  "longitude": "-46,491701",
+  "latitude": "-23,574618",
+  "address": ""
+}

@@ -1,0 +1,87 @@
+/*** Cellular-Z 20220225 13:54:12 ***/
+{
+  "cell": {
+    "cdmadbm": -15,
+    "cdmaecio": -200,
+    "cqi": 6,
+    "earfcn": 1800,
+    "eci": 205597974,
+    "evdodbm": -15,
+    "evdoecio": -200,
+    "pci": 376,
+    "rsrp": -79,
+    "rsrq": -15,
+    "rssi": -49,
+    "rxlev": -79,
+    "sinr": 10,
+    "tac": 51511,
+    "type": "LTE"
+  },
+  "datanet": "LTE",
+  "iccid": "89551094360098611776",
+  "imei": "357855081452191",
+  "imsi": "724102190864582",
+  "is_data_slot": 1,
+  "is_voice_slot": 0,
+  "mcc": "724",
+  "mnc": "10",
+  "msisdn": "+5511964069211",
+  "ncells": [
+    {
+      "cqi": 0,
+      "earfcn": 1800,
+      "pci": 321,
+      "rsrp": -83,
+      "rsrq": -18,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 3350,
+      "pci": 321,
+      "rsrp": -94,
+      "rsrq": -16,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 3350,
+      "pci": 79,
+      "rsrp": -95,
+      "rsrq": -19,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 9510,
+      "pci": 321,
+      "rsrp": -70,
+      "rsrq": -14,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 9510,
+      "pci": 313,
+      "rsrp": -73,
+      "rsrq": -18,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 9510,
+      "pci": 151,
+      "rsrp": -73,
+      "rsrq": -18,
+      "type": "LTE"
+    }
+  ],
+  "netoperator": "VIVO",
+  "simoperator": "VIVO",
+  "slot_sn": 1,
+  "voicenet": "LTE",
+  "time": "20220225 13:54:12",
+  "longitude": "-46,56354",
+  "latitude": "-23,54507",
+  "address": ""
+}

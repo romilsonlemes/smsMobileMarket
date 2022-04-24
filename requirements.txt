@@ -19,6 +19,7 @@ Pillow==9.0.1
 pycodestyle==2.8.0
 pycparser==2.21
 pyflakes==2.4.0
+PyPDF2==1.26.0
 pyperclip==1.8.2
 six==1.16.0
 SQLAlchemy==1.4.31

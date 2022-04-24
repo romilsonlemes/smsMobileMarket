@@ -1,0 +1,118 @@
+/*** Cellular-Z 20220224 15:23:28 ***/
+{
+  "cell": {
+    "arfcn": 147,
+    "bsic": 45,
+    "cdmadbm": -18,
+    "cdmaecio": -200,
+    "ci": 17543,
+    "evdodbm": -18,
+    "evdoecio": -200,
+    "lac": 6011,
+    "rxlev": -53,
+    "type": "GSM"
+  },
+  "datanet": "GPRS",
+  "iccid": "89551094360098611776",
+  "imei": "357855081452191",
+  "imsi": "724102190864582",
+  "is_data_slot": 0,
+  "is_voice_slot": 0,
+  "mcc": "724",
+  "mnc": "10",
+  "msisdn": "+5511964069211",
+  "ncells": [
+    {
+      "arfcn": 140,
+      "bsic": 41,
+      "ci": 17542,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 148,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 146,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 134,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 173,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 142,
+      "bsic": 45,
+      "ci": 16521,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 786,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 136,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 179,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 181,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 144,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 834,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    }
+  ],
+  "netoperator": "VIVO",
+  "simoperator": "VIVO",
+  "slot_sn": 1,
+  "voicenet": "GPRS",
+  "time": "20220224 15:23:28",
+  "longitude": "-46,49158",
+  "latitude": "-23,574662",
+  "address": ""
+}
