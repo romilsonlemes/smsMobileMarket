@@ -1,0 +1,145 @@
+/*** Cellular-Z 20220224 15:36:35 ***/
+{
+  "cell": {
+    "arfcn": 654,
+    "bsic": 38,
+    "cdmadbm": -14,
+    "cdmaecio": -200,
+    "ci": 24513,
+    "evdodbm": -14,
+    "evdoecio": -200,
+    "lac": 4211,
+    "rxlev": -71,
+    "type": "GSM"
+  },
+  "datanet": "GPRS",
+  "iccid": "89550317002160813640",
+  "imei": "357855081452191",
+  "imsi": "724031443084693",
+  "is_data_slot": 0,
+  "is_voice_slot": 0,
+  "mcc": "724",
+  "mnc": "03",
+  "ncells": [
+    {
+      "arfcn": 644,
+      "bsic": 9,
+      "ci": 24512,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 653,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 648,
+      "bsic": 47,
+      "ci": 24511,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 643,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 641,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 649,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 658,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 646,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 637,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 639,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 650,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 651,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 638,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 656,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 657,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 647,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    }
+  ],
+  "netoperator": "TIM 11 | TIM",
+  "simoperator": "TIM 11 | TIM",
+  "slot_sn": 1,
+  "voicenet": "GPRS",
+  "time": "20220224 15:36:35",
+  "longitude": "-46,491445",
+  "latitude": "-23,574463",
+  "address": ""
+}

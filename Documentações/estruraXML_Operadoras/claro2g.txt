@@ -1,0 +1,201 @@
+/*** Cellular-Z 20220224 15:14:12 ***/
+{
+  "cell": {
+    "arfcn": 662,
+    "bsic": 1,
+    "cdmadbm": -26,
+    "cdmaecio": -200,
+    "ci": 21932,
+    "evdodbm": -26,
+    "evdoecio": -200,
+    "lac": 7611,
+    "rxlev": -63,
+    "type": "GSM"
+  },
+  "datanet": "GPRS",
+  "iccid": "89550532990019659017",
+  "imei": "357854081452194",
+  "imsi": "724051314662719",
+  "is_data_slot": 1,
+  "is_voice_slot": 1,
+  "mcc": "724",
+  "mnc": "05",
+  "ncells": [
+    {
+      "arfcn": 591,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 596,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 592,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 589,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 590,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 593,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 631,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 632,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 664,
+      "bsic": 255,
+      "ci": 21930,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 588,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 587,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 735,
+      "bsic": 45,
+      "ci": 21931,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 634,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 586,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 231,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 240,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 243,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 244,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 247,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 250,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 251,
+      "bsic": 3,
+      "ci": 23951,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 182,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 183,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    },
+    {
+      "arfcn": 635,
+      "bsic": 255,
+      "ci": 65535,
+      "rxlev": -51,
+      "type": "GSM"
+    }
+  ],
+  "netoperator": "Claro BR",
+  "simoperator": "Claro BR",
+  "slot_sn": 0,
+  "voicenet": "GPRS",
+  "time": "20220224 15:14:12",
+  "longitude": "-46,491632",
+  "latitude": "-23,57464",
+  "address": ""
+}

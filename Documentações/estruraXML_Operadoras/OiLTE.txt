@@ -1,0 +1,46 @@
+/*** Cellular-Z 20220225 14:18:51 ***/
+{
+  "cell": {
+    "cdmadbm": -4,
+    "cdmaecio": -200,
+    "cqi": 11,
+    "earfcn": 3150,
+    "eci": 17910787,
+    "evdodbm": -4,
+    "evdoecio": -200,
+    "pci": 495,
+    "rsrp": -89,
+    "rsrq": -13,
+    "rssi": -69,
+    "rxlev": -89,
+    "tac": 31141,
+    "type": "LTE"
+  },
+  "datanet": "LTE",
+  "iccid": "8955311929864464996",
+  "imei": "357854081452194",
+  "imsi": "724311933545712",
+  "is_data_slot": 1,
+  "is_voice_slot": 1,
+  "mcc": "724",
+  "mnc": "31",
+  "msisdn": "+5511962410553",
+  "ncells": [
+    {
+      "cqi": 0,
+      "earfcn": 3150,
+      "pci": 487,
+      "rsrp": -92,
+      "rsrq": -14,
+      "type": "LTE"
+    }
+  ],
+  "netoperator": "Oi",
+  "simoperator": "Oi",
+  "slot_sn": 0,
+  "voicenet": "LTE",
+  "time": "20220225 14:18:51",
+  "longitude": "-46,562089",
+  "latitude": "-23,554766",
+  "address": ""
+}

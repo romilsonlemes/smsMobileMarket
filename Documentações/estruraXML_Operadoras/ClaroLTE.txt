@@ -1,0 +1,85 @@
+/*** Cellular-Z 20220225 13:48:22 ***/
+{
+  "cell": {
+    "cdmadbm": -9,
+    "cdmaecio": -200,
+    "cqi": 5,
+    "earfcn": 9610,
+    "eci": 28365322,
+    "evdodbm": -9,
+    "evdoecio": -200,
+    "pci": 296,
+    "rsrp": -109,
+    "rsrq": -20,
+    "rxlev": -109,
+    "sinr": -80,
+    "tac": 46411,
+    "type": "LTE"
+  },
+  "datanet": "LTE",
+  "iccid": "89550532990019659017",
+  "imei": "357854081452194",
+  "imsi": "724051314662719",
+  "is_data_slot": 1,
+  "is_voice_slot": 1,
+  "mcc": "724",
+  "mnc": "05",
+  "ncells": [
+    {
+      "cqi": 0,
+      "earfcn": 9610,
+      "pci": 288,
+      "rsrp": -109,
+      "rsrq": -20,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 2950,
+      "pci": 280,
+      "rsrp": -121,
+      "rsrq": -20,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 250,
+      "pci": 280,
+      "rsrp": -112,
+      "rsrq": -19,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 1575,
+      "pci": 488,
+      "rsrp": -115,
+      "rsrq": -19,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 1400,
+      "pci": 296,
+      "rsrp": -115,
+      "rsrq": -19,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 1400,
+      "pci": 488,
+      "rsrp": -116,
+      "rsrq": -20,
+      "type": "LTE"
+    }
+  ],
+  "netoperator": "Claro BR",
+  "simoperator": "Claro BR",
+  "slot_sn": 0,
+  "voicenet": "LTE",
+  "time": "20220225 13:48:22",
+  "longitude": "-46,563472",
+  "latitude": "-23,545071",
+  "address": ""
+}

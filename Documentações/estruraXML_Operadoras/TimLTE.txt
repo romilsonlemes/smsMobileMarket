@@ -1,0 +1,78 @@
+/*** Cellular-Z 20220225 14:40:34 ***/
+{
+  "cell": {
+    "cdmadbm": -21,
+    "cdmaecio": -200,
+    "cqi": 8,
+    "earfcn": 50,
+    "eci": 16881174,
+    "evdodbm": -21,
+    "evdoecio": -200,
+    "pci": 487,
+    "rsrp": -78,
+    "rsrq": -9,
+    "rssi": -47,
+    "rxlev": -79,
+    "sinr": 70,
+    "tac": 31141,
+    "type": "LTE"
+  },
+  "datanet": "LTE",
+  "iccid": "89550317002160813640",
+  "imei": "357854081452194",
+  "imsi": "724031443084693",
+  "is_data_slot": 1,
+  "is_voice_slot": 1,
+  "mcc": "724",
+  "mnc": "03",
+  "ncells": [
+    {
+      "cqi": 0,
+      "earfcn": 50,
+      "pci": 425,
+      "rsrp": -82,
+      "rsrq": -14,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 1276,
+      "pci": 425,
+      "rsrp": -80,
+      "rsrq": -12,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 1276,
+      "pci": 487,
+      "rsrp": -82,
+      "rsrq": -15,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 3150,
+      "pci": 487,
+      "rsrp": -91,
+      "rsrq": -11,
+      "type": "LTE"
+    },
+    {
+      "cqi": 0,
+      "earfcn": 3150,
+      "pci": 479,
+      "rsrp": -97,
+      "rsrq": -18,
+      "type": "LTE"
+    }
+  ],
+  "netoperator": "TIMBRASIL | TIM",
+  "simoperator": "TIMBRASIL | TIM",
+  "slot_sn": 0,
+  "voicenet": "LTE",
+  "time": "20220225 14:40:34",
+  "longitude": "-46,56178",
+  "latitude": "-23,555042",
+  "address": ""
+}
